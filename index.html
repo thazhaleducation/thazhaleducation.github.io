@@ -1,14 +1,27 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-<div id="app">{{ message }}</div>
-
+<body style="margin: 0;">
+  <div id="app">
+    <div :class="bodyClass">
+      <img style="width:100%; height: 100%;" src="./assets/img/bg.png">
+    </div>
+  </div>
+</body>
+<style>
+  .bg {
+    background-color: rgb(111, 243, 171);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+</style>
 <script>
   const { createApp } = Vue
 
   createApp({
     data() {
       return {
-        message: 'வணக்கம், தழல்!'
+        bodyClass: 'bg',
+        message: 'வணக்கம் தழல்!',
       }
     }
   }).mount('#app')
